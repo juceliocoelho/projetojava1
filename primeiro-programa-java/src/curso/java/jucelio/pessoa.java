@@ -12,7 +12,17 @@ public class pessoa {
 	
 	private Date dataNascimento;
 	
+	private Date dataCadastramento;
 	
+    
+	
+	public Date getDataCadastramento() {
+		return dataCadastramento;
+	}
+
+	public void setDataCadastramento(Date dataCadastramento) {
+		this.dataCadastramento = dataCadastramento;
+	}
 
 	public Date getDataNascimento() {
 		return dataNascimento;
