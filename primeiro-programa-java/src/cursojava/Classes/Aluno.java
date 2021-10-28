@@ -6,20 +6,13 @@ import java.util.List;
 import cursojava.constantes.StatusAluno;
 
 /*ESTÁ É NOSSA CLASSE/OBJETO QUE REPRESENTA O ALUNO*/
-public class Aluno {
+public class Aluno extends pessoa {
 
 	/* ESSES SÃO OS ATRIBUTOS DO ALUNO */
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatricula;
-
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {
@@ -198,4 +191,21 @@ public class Aluno {
 			return false;
 		return true;
 	}
+
+	@Override /* INDENTIFICA METODO SOBREESCRITO */
+	public boolean pessoaMaiorIdade() {
+
+		return idade >= 21;
+	}
+
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Obaa aluno é maior dse idade " : "Ixii vc é menor de idade ";
+	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1500.90;
+	}
+
 }

@@ -7,7 +7,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.Classes.Aluno;
+import cursojava.Classes.Diretor;
 import cursojava.Classes.Disciplina;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 
 public class primeiraClasseJava {
@@ -18,7 +20,7 @@ public class primeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login ");
 		String senha = JOptionPane.showInputDialog("Informe o Senha ");
 
-		if (login.equalsIgnoreCase("admin ") && senha.equalsIgnoreCase("admin")) {
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {/**/
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -111,6 +113,8 @@ public class primeiraClasseJava {
 			for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
 				System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com media = " + aluno.getMediaNota());
 			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido ");
 		}
 	}
 }
